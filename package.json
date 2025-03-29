@@ -2,7 +2,9 @@
   "name": "bbcode-nga",
   "displayName": "BBCode (NGA)",
   "description": "支持 [NGA](https://bbs.nga.cn/) BBCode 语法 的 VSCode 插件",
+  "author": "stone5265",
   "version": "1.0.0",
+  "publisher": "stone5265",
   "engines": {
     "vscode": "^1.98.0"
   },

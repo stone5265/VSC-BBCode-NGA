@@ -32,3 +32,7 @@ BBCode (NGA)
 - **右键菜单**
   - BBCode转纯文本: 使选中区域内 BBCode 失去效果，显示为纯文本
   - 精简URL: 将选中区域中的url代码块中的NGA域名精简掉，比如将`[url=https://bbs.nga.cn/read.php?tid=XXX]`精简成`[url=/read.php?tid=XXX]`
+  
+## 安装
+
+VSCode 扩展市场 搜索 **BBCode (NGA)**
