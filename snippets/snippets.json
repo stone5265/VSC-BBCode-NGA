@@ -1,0 +1,248 @@
+{
+	"[b][/b]": {
+		"prefix": "bb",
+		"body": [
+			"[b]${1:__文本__}[/b]"
+		],
+		"description": "加粗"
+	},
+    "[i][/i]": {
+		"prefix": "ii",
+		"body": [
+			"[i]${1:__文本__}[/i]"
+		],
+		"description": "斜体"
+	},
+    "[u][/u]": {
+		"prefix": "ii",
+		"body": [
+			"[u]${1:__文本__}[/u]"
+		],
+		"description": "下划线"
+	},
+    "[h][/h]": {
+		"prefix": "hh",
+		"body": [
+			"[hh]$1[/u]"
+		],
+		"description": "标题"
+	},
+    "[l][/l]": {
+		"prefix": "ll",
+		"body": [
+			"[l]${1:__内容__}[/l]"
+		],
+		"description": "左悬浮"
+	},
+    "[r][/r]": {
+		"prefix": "rr",
+		"body": [
+			"[r]${1:__内容__}[/r]"
+		],
+		"description": "右悬浮"
+	},
+    "[sup][/sup]": {
+		"prefix": "ssup",
+		"body": [
+			"[sup]${1:__内容__}[/sup]"
+		],
+		"description": "上标"
+	},
+    "[del][/del]": {
+		"prefix": "ddel",
+		"body": [
+			"[del]${1:__文本__}[/del]"
+		],
+		"description": "删除线"
+	},
+    "[randomblock][/randomblock]": {
+		"prefix": "rrandomblock",
+		"body": [
+			"[randomblock]",
+            "${1:__内容__}",
+            "[/randomblock]"
+		],
+		"description": "randomblock"
+	},
+    "[quote][/quote]": {
+		"prefix": "qquote",
+		"body": [
+			"[quote]${1:__内容__}[/quote]"
+		],
+		"description": "引用"
+	},
+    "[code][/code]": {
+		"prefix": "ccode",
+		"body": [
+			"[code]${1:__内容__}[/code]"
+		],
+		"description": "代码块"
+	},
+    "[collapse=][/collapse]": {
+		"prefix": "ccollapse",
+		"body": [
+			"[collapse=${1:__提要__}]${2:__内容__}[/collapse]"
+		],
+		"description": "折叠"
+	},
+    "[align=center][/align]": {
+		"prefix": "aalign",
+		"body": [
+			"[align=${1:center}]${2:__内容__}[/align]"
+		],
+		"description": "对齐方式"
+	},
+    "[url=][/url]": {
+		"prefix": "uurl",
+		"body": [
+			"[url=__url__]${1:__描述__}[/url]"
+		],
+		"description": "url"
+	},
+    "[table][tr][td][/td][tr][/table]": {
+		"prefix": "ttable",
+		"body": [
+			"[table]",
+            "[tr][td]${1:__内容__}[/td][/tr]",
+            "[/table]"
+		],
+		"description": "单格表格"
+	},
+    "[tr][/tr]": {
+		"prefix": "ttr",
+		"body": [
+			"[tr]$1[/tr]"
+		],
+		"description": "单行"
+	},
+    "[td][/td]": {
+		"prefix": "ttd",
+		"body": [
+			"[td]${1:__内容__}[/td]"
+		],
+		"description": "单列"
+	},
+    "[list][*][/list]": {
+		"prefix": "llist",
+		"body": [
+			"[list]",
+            "[*]${1:__内容__}",
+            "[/list]"
+		],
+		"description": "列表"
+	},
+    "[color=silver][/color]": {
+		"prefix": "silver",
+		"body": [
+			"[color=silver]${1:__文本__}[/color]"
+		],
+		"description": "灰色"
+	},
+    "[color=red][/color]": {
+		"prefix": "red",
+		"body": [
+			"[color=red]${1:__文本__}[/color]"
+		],
+		"description": "红色"
+	},
+    "[color=green][/color]": {
+		"prefix": "green",
+		"body": [
+			"[color=green]${1:__文本__}[/color]"
+		],
+		"description": "绿色"
+	},
+    "[color=blue][/color]": {
+		"prefix": "blue",
+		"body": [
+			"[color=blue]${1:__文本__}[/color]"
+		],
+		"description": "蓝色"
+	},
+    "[color=silver][b][/b][/color]": {
+		"prefix": "ssilver",
+		"body": [
+			"[color=silver][b]${1:__文本__}[/b][/color]"
+		],
+		"description": "深灰色"
+	},
+    "[color=red][b][/b][/color]": {
+		"prefix": "rred",
+		"body": [
+			"[color=red][b]${1:__文本__}[/b][/color]"
+		],
+		"description": "深红色"
+	},
+    "[color=green][b][/b][/color]": {
+		"prefix": "ggreen",
+		"body": [
+			"[color=green][b]${1:__文本__}[/b][/color]"
+		],
+		"description": "深绿色"
+	},
+    "[color=blue][b][/b][/color]": {
+		"prefix": "bblue",
+		"body": [
+			"[color=blue][b]${1:__文本__}[/b][/color]"
+		],
+		"description": "深蓝色"
+	},
+    "[align=right].[/align]": {
+		"prefix": "vv",
+		"body": [
+			"[align=right].[/align]$1"
+		],
+		"description": "空行占位符"
+	},
+    "[size=150%][/size]": {
+		"prefix": "large",
+		"body": [
+			"[size=150%]${1:__文本__}[/size]"
+		],
+		"description": "size=150%"
+	},
+    "[size=60%][/size]": {
+		"prefix": "small",
+		"body": [
+			"[size=60%]${1:__文本__}[/size]"
+		],
+		"description": "size=60%"
+	},
+    "[size=1%][/size]": {
+		"prefix": "tiny",
+		"body": [
+			"[size=1%]${1:__文本__}[/size]"
+		],
+		"description": "size=1%"
+	},
+    "[size=1%]卝[/size]": {
+		"prefix": "zz",
+		"body": [
+			"[size=0%]卝[/size]$1"
+		],
+		"description": "分割敏感词,防止卡审核"
+	},
+    "[quote]__图__[/quote]": {
+		"prefix": "iimg",
+		"body": [
+			"[quote]__图__[/quote]$1"
+		],
+		"description": "(包裹起来的)图片占位符"
+	},
+    "[collapse]__图__[/collapse]": {
+		"prefix": "collapse_img",
+		"body": [
+			"[collapse]__图__",
+            "[/collapse]$1"
+		],
+		"description": "折叠起来的图片"
+	},
+    "[collapse=]__图__[/collapse]": {
+		"prefix": "collapse_img2",
+		"body": [
+			"[collapse=${1:描述}]__图__",
+            "[/collapse]$2"
+		],
+		"description": "折叠的图片(带描述)"
+	}
+}

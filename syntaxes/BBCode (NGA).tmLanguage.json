@@ -1,0 +1,486 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "BBCode (NGA)",
+	"scopeName": "source.bbcode.nga",
+	"patterns": [
+		{
+			"include": "#tags"
+		}
+	],
+	"repository": {
+		"tags": {
+			"patterns": [
+				{"include": "#b"},
+				{"include": "#i"},
+				{"include": "#u"},
+				{"include": "#h"},
+				{"include": "#l"},
+				{"include": "#r"},
+				{"include": "#sup"},
+				{"include": "#del"},
+				{"include": "#code"},
+				{"include": "#quote"},
+				{"include": "#randomblock"},
+				{"include": "#style"},
+				{"include": "#img"},
+				{"include": "#url"},
+				{"include": "#tid"},
+				{"include": "#pid"},
+				{"include": "#uid"},
+				{"include": "#align"},
+				{"include": "#color"},
+				{"include": "#font"},
+				{"include": "#size"},
+				{"include": "#collapse"},
+				{"include": "#table"},
+				{"include": "#list"}
+			]
+		},
+		"b": {
+			"begin": "\\[b\\]",
+			"beginCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"end": "\\[/b\\]",
+			"endCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"name": "meta.b.bbcode.nga",
+			"patterns": [{ "include": "#tags" }]
+		},
+		"i": {
+			"begin": "\\[i\\]",
+			"beginCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"end": "\\[/i\\]",
+			"endCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"name": "meta.i.bbcode.nga",
+			"patterns": [{ "include": "#tags" }]
+		},
+		"u": {
+			"begin": "\\[u\\]",
+			"beginCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"end": "\\[/u\\]",
+			"endCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"name": "meta.u.bbcode.nga",
+			"patterns": [{ "include": "#tags" }]
+		},
+		"h": {
+			"begin": "\\[h\\]",
+			"beginCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"end": "\\[/h\\]",
+			"endCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"name": "meta.h.bbcode.nga",
+			"contentName": "markup.bold",
+			"patterns": [{ "include": "#tags" }]
+		},
+		"l": {
+			"begin": "\\[l\\]",
+			"beginCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"end": "\\[/l\\]",
+			"endCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"name": "meta.l.bbcode.nga",
+			"patterns": [{ "include": "#tags" }]
+		},
+		"r": {
+			"begin": "\\[r\\]",
+			"beginCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"end": "\\[/r\\]",
+			"endCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"name": "meta.r.bbcode.nga",
+			"patterns": [{ "include": "#tags" }]
+		},
+		"sup": {
+			"begin": "\\[sup\\]",
+			"beginCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"end": "\\[/sup\\]",
+			"endCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"name": "meta.sup.bbcode.nga",
+			"patterns": [{ "include": "#tags" }]
+		},
+		"code": {
+			"begin": "\\[code\\]",
+			"beginCaptures": {
+				"0": { "name": "variable.function.tag.bbcode.nga" }
+			},
+			"end": "\\[/code\\]",
+			"endCaptures": {
+				"0": { "name": "variable.function.tag.bbcode.nga" }
+			},
+			"name": "meta.code.bbcode.nga",
+			"contentName": "comment"
+		},
+		"quote": {
+			"begin": "\\[quote\\]",
+			"beginCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"end": "\\[/quote\\]",
+			"endCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"name": "meta.quote.bbcode.nga",
+			"patterns": [{ "include": "#tags" }]
+		},
+		"img": {
+			"match": "\\[img\\](.+?)\\[/img\\]",
+			"name": "entity.name.tag.bbcode.nga"
+		},
+		"url": {
+			"patterns": [
+				{
+					"match": "\\[url\\](.+?)\\[/url\\]",
+					"captures": {
+						"0": { "name": "keyword.tag.bbcode.nga" },
+						"1": { "name": "markup.underline.link" }
+					}
+				},
+				{
+					"begin": "\\[url=([^\\]]+)\\]",
+					"beginCaptures": {
+						"0": { "name": "keyword.tag.bbcode.nga" },
+						"1": { "name": "markup.underline.link" }
+					},
+					"end": "\\[/url\\]",
+					"endCaptures": {
+						"0": { "name": "keyword.tag.bbcode.nga" }
+					},
+					"name": "meta.url.bbcode.nga",
+					"patterns": [{ "include": "#tags" }]
+				}
+			]
+		},
+		"tid": {
+			"patterns": [
+				{
+					"match": "\\[tid\\](\\d+)\\[/tid\\]",
+					"captures": {
+						"1": { "name": "constant.numeric" }
+					},
+					"name": "keyword.tag.bbcode.nga"
+				},
+				{
+					"match": "(\\[tid=(\\d+)\\])(.+?)(\\[/tid\\])",
+					"captures": {
+						"1": { "name": "keyword.tag.bbcode.nga" },
+						"2": { "name": "constant.numeric" },
+						"3": { "name": "meta.tid.bbcode.nga" },
+						"4": { "name": "keyword.tag.bbcode.nga" }
+					}
+				}
+			]
+		},
+		"pid": {
+			"patterns": [
+				{
+					"match": "\\[pid\\](\\d+,\\d+,\\d+)\\[/pid\\]",
+					"captures": {
+						"1": { "name": "constant.numeric" }
+					},
+					"name": "keyword.tag.bbcode.nga"
+				},
+				{
+					"match": "(\\[pid=(\\d+,\\d+,\\d+)\\])(.+?)(\\[/pid\\])",
+					"captures": {
+						"1": { "name": "keyword.tag.bbcode.nga" },
+						"2": { "name": "constant.numeric" },
+						"3": { "name": "meta.pid.bbcode.nga" },
+						"4": { "name": "keyword.tag.bbcode.nga" }
+					}
+				}
+			]
+		},
+		"uid": {
+			"patterns": [
+				{
+					"match": "\\[uid\\](\\d+)\\[/uid\\]",
+					"captures": {
+						"1": { "name": "constant.numeric" }
+					},
+					"name": "keyword.tag.bbcode.nga"
+				},
+				{
+					"match": "(\\[uid=(\\d+)\\])(.+?)(\\[/uid\\])",
+					"captures": {
+						"1": { "name": "keyword.tag.bbcode.nga" },
+						"2": { "name": "constant.numeric" },
+						"3": { "name": "meta.uid.bbcode.nga" },
+						"4": { "name": "keyword.tag.bbcode.nga" }
+					}
+				}
+			]
+		},
+		"align": {
+			"begin": "\\[align=(left|center|right)\\]",
+			"beginCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"end": "\\[/align\\]",
+			"endCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"name": "meta.align.bbcode.nga",
+			"patterns": [{ "include": "#tags" }]
+		},
+		"color": {
+			"begin": "\\[color=(skyblue|royalblue|blue|darkblue|orange|orangered|crimson|red|firebrick|darkred|green|limegreen|seagreen|teal|deeppink|tomato|coral|purple|indigo|burlywood|burlywood|sandybrown|chocolate|sienna|silver|bgskyblue|bgroyalblue|bgblue|bgdarkblue|bgorange|bgorangered|bgcrimson|bgred|bgfirebrick|bgdarkred|bggreen|bglimegreen|bgseagreen|bgteal|bgdeeppink|bgtomato|bgcoral|bgpurple|bgindigo|bgburlywood|bgburlywood|bgsandybrown|bgchocolate|bgsienna|bgsilver)\\]",
+			"beginCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" },
+				"1": { "name": "variable.parameter" }
+			},
+			"end": "\\[/color\\]",
+			"endCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"name": "meta.color.bbcode.nga",
+			"patterns": [{ "include": "#tags" }]
+		},
+		"font": {
+			"begin": "\\[font=(simsun|simhei|Arial|Arial Black|Book Antiqua|Century Gothic|Comic Sans MS|Courier New|Georgia|Impact|Tahoma|Times New Roman|Trebuchet MS|Script MT Bold|Stencil|Verdana|Lucida Console)\\]",
+			"beginCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" },
+				"1": { "name": "variable.parameter" }
+			},
+			"end": "\\[/font\\]",
+			"endCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"name": "meta.font.bbcode.nga",
+			"patterns": [{ "include": "#tags" }]
+		},
+		"size": {
+			"patterns": [
+				{	
+					"begin": "\\[size=0%\\]",
+					"beginCaptures": {
+						"0": { "name": "comment.tag.bbcode.nga" }
+					},
+					"end": "\\[/size\\]",
+					"endCaptures": {
+						"0": { "name": "comment.tag.bbcode.nga" }
+					},
+					"name": "comment.size.bbcode.nga",
+					"patterns": [{ "include": "#tags" }]
+				},
+				{
+					"begin": "\\[size=(\\d+%)\\]",
+					"beginCaptures": {
+						"0": { "name": "keyword.tag.bbcode.nga" },
+						"1": { "name": "constant.numeric" }
+					},
+					"end": "\\[/size\\]",
+					"endCaptures": {
+						"0": { "name": "keyword.tag.bbcode.nga" }
+					},
+					"name": "meta.size.bbcode.nga",
+					"patterns": [{ "include": "#tags" }]
+				}
+			]
+		},
+		"collapse": {
+			"patterns": [
+				{
+					"begin": "\\[collapse\\]",
+					"beginCaptures": {
+						"0": { "name": "keyword.tag.bbcode.nga" }
+					},
+					"end": "\\[/collapse\\]",
+					"endCaptures": {
+						"0": { "name": "keyword.tag.bbcode.nga" }
+					},
+					"name": "meta.collapse.bbcode.nga",
+					"patterns": [{ "include": "#tags" }]
+				},
+				{
+					"begin": "\\[collapse=([^\\]]+)\\]",
+					"beginCaptures": {
+						"0": { "name": "keyword.tag.bbcode.nga" },
+						"1": { "name": "constant.language" }
+					},
+					"end": "\\[/collapse\\]",
+					"endCaptures": {
+						"0": { "name": "keyword.tag.bbcode.nga" }
+					},
+					"name": "meta.collapse.bbcode.nga",
+					"patterns": [{ "include": "#tags" }]
+				}
+			]
+		},
+		"table": {
+			"begin": "\\[table\\]",
+			"beginCaptures": {
+				"0": { "name": "variable.function.tag.bbcode.nga" }
+			},
+			"end": "\\[/table\\]",
+			"endCaptures": {
+				"0": { "name": "variable.function.tag.bbcode.nga" }
+			},
+			"name": "meta.table.bbcode.nga",
+			"patterns": [{ "include": "#tr" }]
+		},
+		"tr": {
+			"begin": "\\[tr\\]",
+			"beginCaptures": {
+				"0": { "name": "entity.name.section.tag.bbcode.nga" }
+			},
+			"end": "\\[/tr\\]",
+			"endCaptures": {
+				"0": { "name": "entity.name.section.tag.bbcode.nga" }
+			},
+			"name": "meta.tr.bbcode.nga",
+			"patterns": [{ "include": "#td" }]
+		},
+		"td": {
+			"patterns": [
+				{
+					"begin": "\\[td\\]",
+					"beginCaptures": {
+						"0": { "name": "entity.name.class.tag.bbcode.nga" }
+					},
+					"end": "\\[/td\\]",
+					"endCaptures": {
+						"0": { "name": "entity.name.class.tag.bbcode.nga" }
+					},
+					"name": "meta.td.bbcode.nga",
+					"patterns": [{ "include": "#tags" }]
+				},
+				{
+					"begin": "\\[td(\\d+)\\]",
+					"beginCaptures": {
+						"0": { "name": "entity.name.class.tag.bbcode.nga" },
+						"1": { "name": "constant.numeric" }
+					},
+					"end": "\\[/td\\]",
+					"endCaptures": {
+						"0": { "name": "entity.name.class.tag.bbcode.nga" }
+					},
+					"name": "meta.td.bbcode.nga",
+					"patterns": [{ "include": "#tags" }]
+				},
+				{
+					"begin": "\\[td (width|colspan|rowspan)=(\\d+)\\]",
+					"beginCaptures": {
+						"0": { "name": "entity.name.class.tag.bbcode.nga" },
+						"2": { "name": "constant.numeric" }
+					},
+					"end": "\\[/td\\]",
+					"endCaptures": {
+						"0": { "name": "entity.name.class.tag.bbcode.nga" }
+					},
+					"name": "meta.td.bbcode.nga",
+					"patterns": [{ "include": "#tags" }]
+				},
+				{
+					"begin": "\\[td (colspan|rowspan)=(\\d+) width=(\\d+)\\]",
+					"beginCaptures": {
+						"0": { "name": "entity.name.class.tag.bbcode.nga" },
+						"2": { "name": "constant.numeric" },
+						"3": { "name": "constant.numeric" }
+					},
+					"end": "\\[/td\\]",
+					"endCaptures": {
+						"0": { "name": "entity.name.class.tag.bbcode.nga" }
+					},
+					"name": "meta.td.bbcode.nga",
+					"patterns": [{ "include": "#tags" }]
+				}
+			]
+		},
+		"list": {
+			"begin": "\\[list\\]",
+			"beginCaptures": {
+				"0": { "name": "variable.function.tag.bbcode.nga" }
+			},
+			"end": "\\[/list\\]",
+			"endCaptures": {
+				"0": { "name": "variable.function.tag.bbcode.nga" }
+			},
+			"name": "meta.list.bbcode.nga",
+			"patterns": [
+				{
+					"match": "\\[\\*\\]",
+					"name": "string"
+				},
+				{
+					"include": "#tags"
+				}
+			]
+		},
+		"randomblock": {
+			"begin": "\\[randomblock\\]",
+			"beginCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"end": "\\[/randomblock\\]",
+			"endCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"name": "meta.randomblock.bbcode.nga",
+			"patterns": [
+				{ "include": "#tags" },
+				{ "include": "#fixsize" }
+			]
+		},
+		"fixsize": {
+			"patterns": [
+				{
+					"match": "\\[fixsize height (\\d*\\.?\\d+) width (\\d*\\.?\\d+) (\\d*\\.?\\d+) background (#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6}))\\]",
+					"captures": {
+						"0": { "name": "variable.function.tag.bbcode.nga" },
+						"1": { "name": "constant.numeric" },
+						"2": { "name": "constant.numeric" },
+						"3": { "name": "constant.numeric" },
+						"4": { "name": "constant.numeric" }
+					}
+				},
+				
+				{
+					"match": "\\[fixsize height (\\d*\\.?\\d+) width (\\d*\\.?\\d+) (\\d*\\.?\\d+) background (#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})) (#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6}))\\]",
+					"captures": {
+						"0": { "name": "variable.function.tag.bbcode.nga" },
+						"1": { "name": "constant.numeric" },
+						"2": { "name": "constant.numeric" },
+						"3": { "name": "constant.numeric" },
+						"4": { "name": "constant.numeric" },
+						"6": { "name": "constant.numeric" }
+					}
+				}
+			]
+		},
+		"style": {
+			"begin": "\\[style (.[^\\]\\b]+)\\]",
+			"beginCaptures": {
+				"0": { "name": "variable.function.tag.bbcode.nga" }
+			},
+			"end": "\\[/style\\]",
+			"endCaptures": {
+				"0": { "name": "variable.function.tag.bbcode.nga" }
+			},
+			"name": "meta.style.bbcode.nga",
+			"patterns": [{ "include": "#tags" }]
+		}
+	}
+}

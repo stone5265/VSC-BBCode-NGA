@@ -1,0 +1,125 @@
+{
+  "name": "bbcode-nga",
+  "displayName": "BBCode (NGA)",
+  "description": "支持 [NGA](https://bbs.nga.cn/) BBCode 语法 的 VSCode 插件",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stone5265/VSC-BBCode-NGA"
+  },
+  "activationEvents": [
+    "onLanguage: bbcode.nga"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "bbcode.nga",
+        "aliases": [
+          "BBCode (NGA)"
+        ],
+        "extensions": [
+          ".nga",
+          ".bbsnga"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "bbcode.nga",
+        "scopeName": "source.bbcode.nga",
+        "path": "./syntaxes/BBCode (NGA).tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "bbcode.nga",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "bbcode.nga",
+        "path": "./snippets/templates.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "bbcode-nga.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "bbcode-nga.decode",
+        "title": "BBCode转纯文本 (不选中区域对全文进行操作)"
+      },
+      {
+        "command": "bbcode-nga.condenseUrl",
+        "title": "精简URL (不选中区域对全文进行操作)"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorTextFocus && editorLangId == bbcode.nga",
+          "command": "bbcode-nga.decode",
+          "group": "navigation@1"
+        },
+        {
+          "when": "editorTextFocus && editorLangId == bbcode.nga",
+          "command": "bbcode-nga.condenseUrl",
+          "group": "navigation@2"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "bbcode-nga.toggleBold",
+        "key": "ctrl+b",
+        "when": "editorTextFocus && editorLangId == bbcode.nga"
+      },
+      {
+        "command": "bbcode-nga.toggleUnderline",
+        "key": "ctrl+u",
+        "when": "editorTextFocus && editorLangId == bbcode.nga"
+      },
+      {
+        "command": "bbcode-nga.toggleItalic",
+        "key": "ctrl+i",
+        "when": "editorTextFocus && editorLangId == bbcode.nga"
+      },
+      {
+        "command": "bbcode-nga.toggleQuote",
+        "key": "ctrl+q",
+        "when": "editorTextFocus && editorLangId == bbcode.nga"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.98.0",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.23.0",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "vscode-textmate-languageservice": "^4.0.0"
+  }
+}
