@@ -8,3 +8,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - 1.0 [2025-03-29]
 同步 Sublime 插件 SublimeBBCodeNGA v1.0版本
+
+- 1.0.1 [2025-03-30]
+修复BUG
