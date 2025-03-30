@@ -23,7 +23,7 @@
     "[h][/h]": {
 		"prefix": "hh",
 		"body": [
-			"[hh]$1[/u]"
+			"[h]$1[/h]"
 		],
 		"description": "标题"
 	},
