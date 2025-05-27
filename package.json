@@ -3,7 +3,7 @@
   "displayName": "BBCode (NGA)",
   "description": "支持 [NGA](https://bbs.nga.cn/) BBCode 语法 的 VSCode 插件",
   "author": "stone5265",
-  "version": "1",
+  "version": "1.1.0",
   "publisher": "stone5265",
   "engines": {
     "vscode": "^1.98.0"
@@ -53,16 +53,20 @@
     ],
     "commands": [
       {
-        "command": "bbcode-nga.helloWorld",
-        "title": "Hello World"
-      },
-      {
         "command": "bbcode-nga.decode",
         "title": "BBCode转纯文本 (不选中区域对全文进行操作)"
       },
       {
         "command": "bbcode-nga.condenseUrl",
-        "title": "精简URL (不选中区域对全文进行操作)"
+        "title": "url精简 (不选中区域对全文进行操作)"
+      },
+      {
+        "command": "bbcode-nga.replaceImg",
+        "title": "img转为占位符 (不选中区域则对全文进行操作)"
+      },
+      {
+        "command": "bbcode-nga.tableToMarkdown",
+        "title": "table转Markdown格式"
       }
     ],
     "menus": {
@@ -76,6 +80,16 @@
           "when": "editorTextFocus && editorLangId == bbcode.nga",
           "command": "bbcode-nga.condenseUrl",
           "group": "navigation@2"
+        },
+        {
+          "when": "editorTextFocus && editorLangId == bbcode.nga",
+          "command": "bbcode-nga.replaceImg",
+          "group": "navigation@3"
+        },
+        {
+          "when": "editorTextFocus && editorLangId == bbcode.nga",
+          "command": "bbcode-nga.tableToMarkdown",
+          "group": "navigation@4"
         }
       ]
     },

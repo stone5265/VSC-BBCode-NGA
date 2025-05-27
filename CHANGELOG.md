@@ -6,8 +6,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [released]
 
-- 1.0 [2025-03-29]
-同步 Sublime 插件 SublimeBBCodeNGA v1.0版本
+- 1.1.0 [2025-05-27]
+同步 Sublime Text 插件 BBCode (NGA) v1.1.0版本
 
 - 1.0.1 [2025-03-30]
 修复BUG
+
+- 1.0 [2025-03-29]
+同步 Sublime Text 插件 BBCode (NGA) v1.0版本

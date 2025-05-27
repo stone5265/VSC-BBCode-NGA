@@ -121,6 +121,18 @@
 			"name": "meta.sup.bbcode.nga",
 			"patterns": [{ "include": "#tags" }]
 		},
+		"del": {
+			"begin": "\\[del\\]",
+			"beginCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"end": "\\[/del\\]",
+			"endCaptures": {
+				"0": { "name": "keyword.tag.bbcode.nga" }
+			},
+			"name": "meta.del.bbcode.nga",
+			"patterns": [{ "include": "#tags" }]
+		},
 		"code": {
 			"begin": "\\[code\\]",
 			"beginCaptures": {
@@ -147,7 +159,7 @@
 		},
 		"img": {
 			"match": "\\[img\\](.+?)\\[/img\\]",
-			"name": "entity.name.tag.bbcode.nga"
+			"name": "entity.name.img.tag.bbcode.nga"
 		},
 		"url": {
 			"patterns": [
